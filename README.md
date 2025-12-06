@@ -87,7 +87,7 @@ The application includes **smart early stopping** that monitors validation accur
 
 | Setting | Value | Impact |
 |---------|-------|--------|
-| Model | ResNet50 | Best accuracy (85-95%) |
+| Model | MobileNetV2 | Best accuracy (85-95%) |
 | Epochs | 30-50 | Sufficient convergence |
 | Patience | 10-15 | Avoids premature stopping |
 | Early Stopping | ✅ Enabled | Prevents overfitting |
