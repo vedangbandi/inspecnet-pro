@@ -190,7 +190,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Author**: Vedang Bandi
 - **Email**: bandivedang@gmail.com
-- **GitHub**: [@yourusername](https://github.com/vedangbandi)
+- **GitHub**: [@VedangBandi](https://github.com/vedangbandi)
 
 ## ⭐ Star History
 
