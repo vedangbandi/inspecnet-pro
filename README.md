@@ -65,7 +65,7 @@ your_dataset/
 ### 2. Configure Training
 - Click **"Training"** tab
 - **Recommended settings for 85%+ accuracy**:
-  - Model: ResNet50
+  - Model: MobileNetV2
   - Epochs: 30-50
   - Batch Size: 32
   - Learning Rate: 0.001
