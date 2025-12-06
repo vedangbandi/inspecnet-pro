@@ -188,9 +188,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-- **Author**: Your Name
-- **Email**: your.email@example.com
-- **GitHub**: [@yourusername](https://github.com/yourusername)
+- **Author**: Vedang Bandi
+- **Email**: bandivedang@gmail.com
+- **GitHub**: [@yourusername](https://github.com/vedangbandi)
 
 ## ⭐ Star History
 
