@@ -1,0 +1,13 @@
+
+customtkinter
+PySide6
+torch
+torchvision
+pandas
+numpy
+matplotlib
+scikit-learn
+Pillow
+onnx
+onnxruntime
+psutil
