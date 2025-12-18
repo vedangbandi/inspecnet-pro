@@ -7,8 +7,6 @@
 
 > **Professional end-to-end deep learning training application for material defect detection with real-time monitoring, early stopping, and ONNX export.**
 
-![InspecNet Pro Screenshot](docs/screenshot.png)
-
 ## 🌟 Key Features
 
 - ✅ **Visual Dataset Browser** - Thumbnail previews and auto-class detection
