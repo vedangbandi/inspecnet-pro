@@ -90,7 +90,6 @@ env.bak/
 venv.bak/
 
 # Data
-dataset/
 dataset_samples/
 
 # Spyder project settings
