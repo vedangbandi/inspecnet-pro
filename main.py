@@ -32,6 +32,7 @@ from src.trainer import Trainer, TrainingCallback
 from src.exporter import ModelExporter
 from src.ui_styles import StyleSheet
 from src.ui_components import PremiumButton, StatusPill, KPICard
+from src.validator import SystemValidator
 
 # --- Logging (Signal Only) ---
 class LogSignal(QObject):
@@ -84,6 +85,8 @@ class Sidebar(QFrame):
         self.dev_lbl = QLabel("Checking Device...")
         self.dev_lbl.setStyleSheet("color: #8b949e; font-size: 11px;")
         self.dev_lbl.setAlignment(Qt.AlignCenter)
+        self.dev_lbl.setWordWrap(True)
+        self.dev_lbl.setContentsMargins(10, 5, 10, 5)
         dl.addWidget(self.dev_lbl)
         
         layout.addWidget(dev_frame)
@@ -98,13 +101,13 @@ class Sidebar(QFrame):
         self.buttons.append(btn)
         
     def update_device(self):
-        if torch.cuda.is_available():
-            d = torch.cuda.get_device_name(0)
-            self.dev_lbl.setText(f"🚀 CUDA ACTIVE\n{d}")
-            self.dev_lbl.setStyleSheet("color: #2ecc71; font-weight: bold; font-size: 10px;")
+        ready, name = SystemValidator.check_cuda()
+        if ready:
+            self.dev_lbl.setText(f"🚀 CUDA ACTIVE\n{name}")
+            self.dev_lbl.setStyleSheet(f"color: {StyleSheet.ACCENT_PRIMARY}; font-size: 11px; font-weight: bold; line-height: 15px;")
         else:
-            self.dev_lbl.setText("⚠️ CPU MODE\nGPU Not Detected")
-            self.dev_lbl.setStyleSheet("color: #f1c40f; font-weight: bold; font-size: 10px;")
+            self.dev_lbl.setText("⚠️ CPU MODE\n(LOW PERFORMANCE)")
+            self.dev_lbl.setStyleSheet("color: #e74c3c; font-size: 11px; font-weight: bold; line-height: 15px;")
 
 class DataPage(QWidget):
     def __init__(self, app):
@@ -654,6 +657,19 @@ class MainWindow(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    
+    # System Validation
+    if SystemValidator.is_first_run():
+        print("--- FIRST RUN: Performing System Validation ---")
+        missing = SystemValidator.check_modules()
+        if missing:
+            QMessageBox.critical(None, "System Error", 
+                                 f"Missing required modules:\n{', '.join(missing)}\n\n"
+                                 "Please run 'pip install -r requirements.txt' to fix this.")
+            sys.exit(1)
+        SystemValidator.mark_as_ready()
+        print("--- System Ready! ---")
+    
     f = QFont("Segoe UI", 10)
     app.setFont(f)
     w = MainWindow()
