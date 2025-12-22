@@ -88,6 +88,7 @@ venv_pro/
 ENV/
 env.bak/
 venv.bak/
+.sys_ready
 
 # Data
 dataset_samples/
