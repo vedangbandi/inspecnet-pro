@@ -138,14 +138,7 @@ inspecnet-pro/
 - **Image Processing**: Pillow, NumPy
 - **Model Export**: ONNX Runtime
 - **Build Tool**: PyInstaller
-
-## 📚 Documentation
-
-- [Quick Start Guide](QUICKSTART.md) - Get started in 3 steps
-- [Full Documentation](docs/DOCUMENTATION.md) - Complete feature guide
-- [Training Best Practices](docs/TRAINING_GUIDE.md) - Tips for high accuracy
-- [API Reference](docs/API.md) - Code documentation
-
+  
 ## 🐛 Troubleshooting
 
 ### Low Accuracy (<85%)
